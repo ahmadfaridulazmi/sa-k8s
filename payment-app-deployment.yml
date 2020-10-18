@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-app
+  labels:
+    app: payment-app
+    group: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-app
+  template:
+    metadata:
+      labels:
+        app: payment-app
+        group: backend
+    spec:
+      containers:
+        - name: payment-app
+          image: faridul/sp-app:latest
+          ports:
+            - containerPort: 4001
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: DATABASE_URL
+              value: postgres://setel:setel@postgres:5432/sa-db
+          command: ['sh', '-c', 'npm run migrate']

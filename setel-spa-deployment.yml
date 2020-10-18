@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: setel-spa
+  labels:
+    app: setel-spa
+    group: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: setel-spa
+  template:
+    metadata:
+      labels:
+        app: setel-spa
+        group: frontend
+    spec:
+      containers:
+        - name: setel-spa
+          image: faridul/sa-spa:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: NODE_ENV
+              value: production
