@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  labels:
+    group: db
+data:
+  POSTGRES_DB: sa-db
+  POSTGRES_USER: sa-user
+  POSTGRES_PASSWORD: sa-password
