@@ -5,6 +5,6 @@ metadata:
   labels:
     group: db
 data:
-  POSTGRES_DB: sa-db
+  POSTGRES_DB: setel
   POSTGRES_USER: setel
   POSTGRES_PASSWORD: setel

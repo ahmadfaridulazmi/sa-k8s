@@ -22,5 +22,5 @@ spec:
           ports:
             - containerPort: 80
           env:
-            - name: NODE_ENV
-              value: production
+            - name: BASE_URL
+              value: http://order-app:4000

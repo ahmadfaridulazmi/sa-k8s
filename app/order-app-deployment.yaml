@@ -25,10 +25,9 @@ spec:
             - configMapRef:
                 name: postgres-config
           env:
+            - name: PAYMENT_SERVICE_URL
+              value: http://payment-app:4001
             - name: NODE_ENV
               value: production
             - name: DATABASE_URL
-              value: postgres://setel:setel@postgres:5432/sa-db
-            - name: PAYMENT_SERVICE_URL
-              value: http://payment-app:4001  
-          command: ['sh', '-c', 'npm run migrate']
+              value: postgres://setel:setel@postgres-payment:5432/setel  
