@@ -30,4 +30,4 @@ spec:
             - name: NODE_ENV
               value: production
             - name: DATABASE_URL
-              value: postgres://setel:setel@postgres-payment:5432/setel  
+              value: postgres://setel:setel@postgres-order:5432/setel  
