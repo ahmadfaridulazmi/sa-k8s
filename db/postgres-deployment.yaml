@@ -19,7 +19,7 @@ spec:
       volumes:  # indicates which PVC are available for this Deployment
         - name: postgres-storage-order
           persistentVolumeClaim:
-            claimName: postgres-persistent-volume-claim
+            claimName: postgres-persistent-volume-claim-order
       containers:
         - name: postgres-order
           image: postgres:9.6-alpine
@@ -27,7 +27,7 @@ spec:
             - containerPort: 5432
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: postgres-config-order
           volumeMounts:    # indicates which Volume (from spec.template.spec.volumes) should be used
             - name: postgres-storage-order                # name of the Volume
               mountPath: /var/lib/postgresql/data   # path inside the container
@@ -53,7 +53,7 @@ spec:
       volumes:  # indicates which PVC are available for this Deployment
         - name: postgres-storage-payment
           persistentVolumeClaim:
-            claimName: postgres-persistent-volume-claim
+            claimName: postgres-persistent-volume-claim-payment
       containers:
         - name: postgres-payment
           image: postgres:9.6-alpine
@@ -61,7 +61,7 @@ spec:
             - containerPort: 5432
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: postgres-config-payment
           volumeMounts:    # indicates which Volume (from spec.template.spec.volumes) should be used
             - name: postgres-storage-payment                # name of the Volume
               mountPath: /var/lib/postgresql/data   # path inside the container              

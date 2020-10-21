@@ -23,7 +23,7 @@ spec:
             - containerPort: 4001
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: postgres-config-payment
           env:
             - name: NODE_ENV
               value: production

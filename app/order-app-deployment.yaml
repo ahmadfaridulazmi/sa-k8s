@@ -23,11 +23,11 @@ spec:
             - containerPort: 4000
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: postgres-config-order
           env:
             - name: PAYMENT_SERVICE_URL
               value: http://payment-app:4001
             - name: NODE_ENV
               value: production
             - name: DATABASE_URL
-              value: postgres://setel:setel@postgres-order:5432/setel  
+              value: postgres://setel:setel@postgres-order:5432/setel
