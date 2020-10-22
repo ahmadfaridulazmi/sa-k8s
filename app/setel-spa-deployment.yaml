@@ -22,5 +22,5 @@ spec:
           ports:
             - containerPort: 80
           env:
-            - name: BASE_URL
+            - name: REACT_APP_BASE_URL
               value: http://order-app:4000
